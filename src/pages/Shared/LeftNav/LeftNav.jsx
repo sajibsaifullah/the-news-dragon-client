@@ -3,16 +3,15 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { Card, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import first from '../../../assets/1.png'
-import second from '../../../assets/2.png'
-import third from '../../../assets/3.png'
-
+import first from "../../../assets/1.png";
+import second from "../../../assets/2.png";
+import third from "../../../assets/3.png";
 
 const LeftNav = () => {
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/categories")
+    fetch("https://the-news-dragon-server-pi-pied.vercel.app/categories")
       .then((res) => res.json())
       .then((data) => setCategories(data))
       .catch((error) => console.error(error));
